@@ -30,7 +30,8 @@ app.get('/notes', (req, res) => {
 
 //Creating API routes
 app.get("/api/notes", (req, res) => {
-  res.json(notesJSON);
+const notesData = JSON.parse(fs.readFileSync("./db/db.json"));
+res.json(notesData)
 });
 
 
@@ -39,7 +40,7 @@ app.post("/api/notes", (req,res) => {
 let note = (req.body);
 let id = (notesJSON.length).toString(); // Making the id of the note the length of the json object.
 note.id = id;
-notesData = JSON.parse(fs.readFileSync("./db/db.json"));
+const notesData = JSON.parse(fs.readFileSync("./db/db.json"));
 notesData.push(note);
 fs.writeFileSync("./db/db.json", JSON.stringify(notesData));
 res.json(notesData);
