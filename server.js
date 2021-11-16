@@ -41,7 +41,8 @@ let id = (notesJSON.length).toString(); // Making the id of the note the length 
 note.id = id;
 notesData = JSON.parse(fs.readFileSync("./db/db.json"));
 notesData.push(note);
-fs.writeFile("./db/db.json", JSON.stringify(notesData));
+fs.writeFileSync("./db/db.json", JSON.stringify(notesData));
+res.json(notesData);
 });
 
 // * `POST /api/notes` should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. You'll need to find a way to give each note a unique id when it's saved (look into npm packages that could do this for you).
