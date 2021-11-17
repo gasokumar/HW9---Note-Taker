@@ -35,7 +35,7 @@ res.json(notesData)
 });
 
 
-//What am I doing wrong?
+
 app.post("/api/notes", (req,res) => {
 let note = (req.body);
 let id = (notesJSON.length).toString(); // Making the id of the note the length of the json object.
