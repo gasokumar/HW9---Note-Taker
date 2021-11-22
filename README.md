@@ -1,6 +1,6 @@
 # Note Taker
 
-This app was created using a back-end as well as pre-written front-end web pages. The app will intake user input for a note, store it in its database, and apply 
+This app was created using a back-end as well as pre-written front-end web pages. The app will intake user input for a note, store it in its database, and display them to the user.
 
 
 
